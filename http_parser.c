@@ -1885,6 +1885,7 @@ reexecute:
         if (parser->flags & F_SKIPBODY) {
           UPDATE_STATE(NEW_MESSAGE());
           CALLBACK_NOTIFY(message_complete);
+          len = (p - data) + 1;
         } else if (parser->flags & F_CHUNKED) {
           /* chunked encoding - ignore Content-Length header,
            * prepare for a chunk */
